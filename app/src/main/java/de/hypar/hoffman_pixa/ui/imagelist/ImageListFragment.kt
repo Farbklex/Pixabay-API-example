@@ -1,18 +1,18 @@
 package de.hypar.hoffman_pixa.ui.imagelist
 
-import android.content.Context
 import android.graphics.Rect
-import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.RecyclerView
+import dagger.hilt.android.AndroidEntryPoint
 import de.hypar.hoffman_pixa.R
 import de.hypar.hoffman_pixa.util.dpToPx
 
+@AndroidEntryPoint
 class ImageListFragment : Fragment() {
 
     companion object {

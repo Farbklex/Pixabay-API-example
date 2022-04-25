@@ -1,11 +1,15 @@
 package de.hypar.hoffman_pixa.ui.imagelist
 
 import androidx.lifecycle.ViewModel
+import dagger.hilt.android.lifecycle.HiltViewModel
 import de.hypar.hoffman_pixa.models.ImageItem
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
+import javax.inject.Inject
 
-class ImageListViewModel : ViewModel() {
+@HiltViewModel
+class ImageListViewModel @Inject constructor() : ViewModel() {
+
 
     private val _imageList: MutableStateFlow<List<ImageItem>> = MutableStateFlow(
         listOf(
