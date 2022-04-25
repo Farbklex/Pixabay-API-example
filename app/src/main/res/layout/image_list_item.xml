@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/thumbnail"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/thumbnail_height"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toTopOf="@id/tag_list"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:src="@drawable/ic_launcher_background" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/tag_list"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/thumbnail"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:paddingStart="@dimen/spacing_s"
+        android:paddingEnd="@dimen/spacing_s"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        android:orientation="horizontal"
+        tools:listitem="@layout/tag_list_item"
+        />
+
+
+    <TextView
+        android:id="@+id/username"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@id/thumbnail"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/thumbnail"
+        app:layout_constrainedWidth="true"
+        app:layout_constrainedHeight="true"
+        app:layout_constraintHorizontal_bias="1"
+        android:layout_marginStart="@dimen/spacing_s"
+        android:layout_marginEnd="@dimen/spacing_s"
+        android:layout_marginBottom="@dimen/spacing_s"
+        style="@style/TextAppearance.MaterialComponents.Headline5"
+        android:textColor="@color/white"
+        tools:text="Farbklex"
+        />
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -2,7 +2,7 @@ package de.hypar.hoffman_pixa
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import de.hypar.hoffman_pixa.ui.main.MainFragment
+import de.hypar.hoffman_pixa.ui.main.ImageListFragment
 
 class MainActivity : AppCompatActivity() {
 
@@ -11,7 +11,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.main_activity)
         if (savedInstanceState == null) {
             supportFragmentManager.beginTransaction()
-                .replace(R.id.container, MainFragment.newInstance())
+                .replace(R.id.container, ImageListFragment.newInstance())
                 .commitNow()
         }
     }

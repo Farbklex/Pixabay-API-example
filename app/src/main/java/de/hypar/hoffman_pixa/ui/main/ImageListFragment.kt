@@ -8,25 +8,30 @@ import android.view.View
 import android.view.ViewGroup
 import de.hypar.hoffman_pixa.R
 
-class MainFragment : Fragment() {
+class ImageListFragment : Fragment() {
 
     companion object {
-        fun newInstance() = MainFragment()
+        fun newInstance() = ImageListFragment()
     }
 
-    private lateinit var viewModel: MainViewModel
+    private lateinit var viewModel: ImageListViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        return inflater.inflate(R.layout.main_fragment, container, false)
+        val view = inflater.inflate(R.layout.image_list_fragment, container, false)
+        setupRecyclerView(view)
+        return view
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProvider(this).get(MainViewModel::class.java)
+        viewModel = ViewModelProvider(this).get(ImageListViewModel::class.java)
         // TODO: Use the ViewModel
     }
 
+    private fun setupRecyclerView(view: View?) {
+
+    }
 }
