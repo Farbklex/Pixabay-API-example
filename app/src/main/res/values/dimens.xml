@@ -2,4 +2,6 @@
 <resources>
     <dimen name="thumbnail_height">180dp</dimen>
     <dimen name="spacing_s">8dp</dimen>
+    <dimen name="max_widget_width">460dp</dimen>
+    <dimen name="list_bottm_padding">60dp</dimen>
 </resources>

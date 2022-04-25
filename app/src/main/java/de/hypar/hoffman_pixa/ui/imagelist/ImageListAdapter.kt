@@ -28,17 +28,21 @@ class ImageListAdapter : RecyclerView.Adapter<ImageListAdapter.ImageViewHolder>(
             items.addAll(item.tags)
             items.addAll(item.tags)
         }
-        holder.tagList.addItemDecoration(object : RecyclerView.ItemDecoration() {
 
-            override fun getItemOffsets(
-                outRect: Rect,
-                view: View,
-                parent: RecyclerView,
-                state: RecyclerView.State
-            ) {
-                outRect.set(0, 0, 8.dpToPx(holder.itemView.context), 0)
-            }
-        })
+        // Add spacing between tags
+        if(holder.tagList.itemDecorationCount == 0){
+            holder.tagList.addItemDecoration(object : RecyclerView.ItemDecoration() {
+
+                override fun getItemOffsets(
+                    outRect: Rect,
+                    view: View,
+                    parent: RecyclerView,
+                    state: RecyclerView.State
+                ) {
+                    outRect.set(0, 0, 8.dpToPx(holder.itemView.context), 0)
+                }
+            })
+        }
     }
 
     override fun getItemCount(): Int {
