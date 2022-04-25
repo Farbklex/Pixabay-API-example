@@ -25,7 +25,6 @@ import de.hypar.hoffman_pixa.models.ImageItem
 import de.hypar.hoffman_pixa.util.dpToPx
 import kotlinx.coroutines.launch
 
-
 val TAG = ImageListFragment::class.java.simpleName
 
 @AndroidEntryPoint

@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import coil.load
 import de.hypar.hoffman_pixa.R
 import de.hypar.hoffman_pixa.models.ImageItem
 import de.hypar.hoffman_pixa.util.dpToPx
@@ -23,6 +24,7 @@ class ImageListAdapter : RecyclerView.Adapter<ImageListAdapter.ImageViewHolder>(
 
     override fun onBindViewHolder(holder: ImageViewHolder, position: Int) {
         val item = items[position]
+        holder.thumbnail.load(item.thumbnailUrl)
         holder.userName.text = item.user
         holder.tagList.adapter = TagAdapter().apply {
             items.addAll(item.tags)

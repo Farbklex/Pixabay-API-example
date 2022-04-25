@@ -19,41 +19,14 @@ class ImageListViewModel @Inject constructor(
 
 
     private val _imageList: MutableStateFlow<List<ImageItem>> = MutableStateFlow(
-        listOf(
-            ImageItem(
-                1,
-                listOf("Waterfall", "Nature", "NoFilter"),
-                "",
-                "",
-                13,
-                25,
-                99,
-                "Farbklex"
-            ),
-            ImageItem(
-                1,
-                listOf("Waterfall", "Nature", "NoFilter"),
-                "",
-                "",
-                13,
-                25,
-                99,
-                "Farbklex"
-            ),
-            ImageItem(
-                1,
-                listOf("Waterfall", "Nature", "NoFilter"),
-                "",
-                "",
-                13,
-                25,
-                99,
-                "Farbklex"
-            )
-        )
+        listOf()
     )
 
     val imageList: StateFlow<List<ImageItem>> = _imageList
+
+    init {
+        searchImages("fruit")
+    }
 
     fun searchImages(query: String){
         viewModelScope.launch {
