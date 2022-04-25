@@ -1,5 +1,6 @@
 package de.hypar.hoffman_pixa.ui.imagelist
 
+import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -12,11 +13,12 @@ import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
+private val TAG = ImageListViewModel::class.java.simpleName
+
 @HiltViewModel
 class ImageListViewModel @Inject constructor(
     val imageApi: PixaBayApi
 ) : ViewModel() {
-
 
     private val _imageList: MutableStateFlow<List<ImageItem>> = MutableStateFlow(
         listOf()
@@ -30,6 +32,8 @@ class ImageListViewModel @Inject constructor(
 
     fun searchImages(query: String){
         viewModelScope.launch {
+            // TODO: Data delivery should be handled by a separate repository class. The repository
+            // should also manage caching
             // TODO: Api key should be more decoupled
             val response = imageApi.searchImages(BuildConfig.PIXABAY_API_KEY, query)
 
@@ -40,6 +44,9 @@ class ImageListViewModel @Inject constructor(
                 imagesInResponse?.let {
                     _imageList.value = it
                 }
+            } else {
+                // TODO: Errors should show a message on UI
+                Log.e(TAG, "Failed to query API")
             }
         }
     }
