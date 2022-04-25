@@ -2,7 +2,7 @@ package de.hypar.hoffman_pixa
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import de.hypar.hoffman_pixa.ui.main.ImageListFragment
+import de.hypar.hoffman_pixa.ui.imagelist.ImageListFragment
 
 class MainActivity : AppCompatActivity() {
 
